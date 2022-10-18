@@ -4,7 +4,9 @@ import {
 } from '@coveo/headless/recommendation';
 
 const headlessRecommendationEngine = buildRecommendationEngine({
-  configuration: getSampleRecommendationEngineConfiguration(),
+  configuration: {
+    // getSampleRecommendationEngineConfiguration(),
+  },
   loggerOptions: { level: 'info' }
 });
 
