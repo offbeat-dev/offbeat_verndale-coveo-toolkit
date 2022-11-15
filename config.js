@@ -2,13 +2,13 @@ module.exports = {
   // Public path
   // if set, make sure it ends with /
   // e.g. 'assets/'
-  publicPath: '',
+  publicPath: './',
 
   // Directory names
   get dir() {
     return {
-      source: 'src',
-      production: 'dist',
+      source: './src',
+      production: './dist',
 
       assets: {
         html: 'html',

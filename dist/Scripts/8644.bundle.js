@@ -1,0 +1,3 @@
+"use strict";(self.webpackChunk_verndale_toolkit=self.webpackChunk_verndale_toolkit||[]).push([[8644],{48644:function(i,n,t){t.r(n),t.d(n,{atomic_sort_expression:function(){return s}});var e=t(51860);const s=class{constructor(o){(0,e.r)(this,o)}render(){const o="atomic-sort-dropdown";if(!this.host.closest(o)){const r=new Error(`The "${this.host.nodeName.toLowerCase()}" component has to be used inside an ${o} element.`);return(0,e.h)("atomic-component-error",{element:this.host,error:r})}}get host(){return(0,e.g)(this)}}}}]);
+
+//# sourceMappingURL=8644.bundle.js.map

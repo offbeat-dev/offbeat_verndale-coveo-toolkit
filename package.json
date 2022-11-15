@@ -10,10 +10,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/verndale/toolkit.git"
-  },
   "scripts": {
     "check-deps": "check-dependencies --install",
     "js-lint": "eslint --fix --color ./src/js/**/*.*",

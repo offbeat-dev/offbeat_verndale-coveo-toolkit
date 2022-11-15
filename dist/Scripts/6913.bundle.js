@@ -1,0 +1,3 @@
+"use strict";(self.webpackChunk_verndale_toolkit=self.webpackChunk_verndale_toolkit||[]).push([[6913],{6913:function(i,t,_){_.r(t),_.d(t,{atomic_result_section_children:function(){return e}});var n=_(51860),s=_(82113),o=_(59348),u=_(27663),E=_(29721);const e=class{constructor(l){(0,n.r)(this,l)}componentDidRender(){(0,s.h)(this.host)}get host(){return(0,n.g)(this)}}},82113:function(i,t,_){_.d(t,{h:function(){return s}});var n=_(59348);function s(o){o.style.display=(0,n.b)(o)?"":"none"}}}]);
+
+//# sourceMappingURL=6913.bundle.js.map

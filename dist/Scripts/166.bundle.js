@@ -1,0 +1,26 @@
+"use strict";(self.webpackChunk_verndale_toolkit=self.webpackChunk_verndale_toolkit||[]).push([[166],{10166:function(C,b,u){u.r(b),u.d(b,{atomic_facet_manager:function(){return c}});var p=u(51860),S=u(7941),v=u(52276),m=u(6981),l=function(n,i,e,r){var h=arguments.length,s=h<3?i:r===null?r=Object.getOwnPropertyDescriptor(i,e):r,g;if(typeof Reflect=="object"&&typeof Reflect.decorate=="function")s=Reflect.decorate(n,i,e,r);else for(var t=n.length-1;t>=0;t--)(g=n[t])&&(s=(h<3?g(s):h>3?g(i,e,s):g(i,e))||s);return h>3&&s&&Object.defineProperty(i,e,s),s};const c=class{constructor(n){(0,p.r)(this,n),this.collapseFacetsAfter=4,this.sortFacets=()=>{if(!this.searchStatusState.firstSearchExecuted){this.updateCollapsedState(this.facets);return}const i=this.facets.map(r=>({facetId:r.facetId,payload:r})),e=this.facetManager.sort(i).map(r=>r.payload);this.updateCollapsedState(e),this.host.append(...e)}}initialize(){this.validateProps(),this.searchStatus=(0,S.p)(this.bindings.engine),this.facetManager=(0,S.o)(this.bindings.engine),this.bindings.i18n.on("languageChanged",this.sortFacets)}updateCollapsedState(n){this.collapseFacetsAfter!==-1&&n.forEach((i,e)=>{i.setAttribute("is-collapsed",e+1>this.collapseFacetsAfter?"true":"false")})}validateProps(){new m.S({collapseFacetAfter:new m.N({min:-1,required:!0})}).validate({collapseFacetAfter:this.collapseFacetsAfter})}get facets(){const n=[];return Array.from(this.host.children).forEach(e=>{this.isPseudoFacet(e)&&n.push(e)}),n}isPseudoFacet(n){return"facetId"in n}disconnectedCallback(){this.bindings.i18n.off("languageChanged",this.sortFacets)}render(){return(0,p.h)("slot",null)}get host(){return(0,p.g)(this)}};l([(0,v.I)()],c.prototype,"bindings",void 0),l([(0,v.B)("searchStatus")],c.prototype,"searchStatusState",void 0),l([(0,v.B)("facetManager",{onUpdateCallbackMethod:"sortFacets"})],c.prototype,"facetManagerState",void 0)},6981:function(C,b,u){u.d(b,{N:function(){return i},S:function(){return v},a:function(){return s},i:function(){return l}});/**
+ * @license
+ *
+ * Copyright 2022 Coveo Solutions Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */function p(t,a){const o=`
+  The following properties are invalid:
+
+    ${t.join(`
+	`)}
+  
+  ${a}
+  `;return new S(o)}var S=class extends Error{constructor(t){super(t);this.name="SchemaValidationError"}},v=class{constructor(t){this.definition=t}validate(t={},a=""){const o={...this.default,...t},f=[];for(const d in this.definition){const _=this.definition[d].validate(o[d]);_&&f.push(`${d}: ${_}`)}if(f.length)throw p(f,a);return o}get default(){const t={};for(const a in this.definition){const o=this.definition[a].default;o!==void 0&&(t[a]=o)}return t}},m=class{constructor(t={}){this.baseConfig=t}validate(t){return this.baseConfig.required&&n(t)?"value is required.":null}get default(){return this.baseConfig.default instanceof Function?this.baseConfig.default():this.baseConfig.default}get required(){return this.baseConfig.required===!0}};function l(t){return t===void 0}function c(t){return t===null}function n(t){return l(t)||c(t)}var i=class{constructor(t={}){this.config=t,this.value=new m(t)}validate(t){const a=this.value.validate(t);return a||(e(t)?t<this.config.min?`minimum value of ${this.config.min} not respected.`:t>this.config.max?`maximum value of ${this.config.max} not respected.`:null:"value is not a number.")}get default(){return this.value.default}get required(){return this.value.required}};function e(t){return l(t)||r(t)}function r(t){return typeof t=="number"&&!isNaN(t)}var h=/^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})).?)(?::\d{2,5})?(?:[/?#]\S*)?$/i,s=class{constructor(t={}){this.config={emptyAllowed:!0,url:!1,...t},this.value=new m(this.config)}validate(t){const{emptyAllowed:a,url:o,regex:f,constrainTo:d}=this.config,_=this.value.validate(t);return _||(l(t)?null:g(t)?!a&&!t.length?"value is an empty string.":o&&!h.test(t)?"value is not a valid URL.":f&&!f.test(t)?`value did not match provided regex ${f}`:d&&!d.includes(t)?`value should be one of: ${d.join(", ")}.`:null:"value is not a string.")}get default(){return this.value.default}get required(){return this.value.required}};function g(t){return Object.prototype.toString.call(t)==="[object String]"}}}]);
+
+//# sourceMappingURL=166.bundle.js.map

@@ -1,0 +1,3 @@
+"use strict";(self.webpackChunk_verndale_toolkit=self.webpackChunk_verndale_toolkit||[]).push([[4589],{54589:function(s,n,e){e.r(n),e.d(n,{atomic_external:function(){return l}});var o=e(51860),i=e(22973),a=e(52276);const l=class{constructor(t){(0,o.r)(this,t),this.selector="atomic-search-interface"}handleInitialization(t){t.preventDefault(),t.stopPropagation(),this.interface.dispatchEvent((0,i.b)(a.a,t.detail))}handleScrollToTop(t){t.preventDefault(),t.stopPropagation(),this.interface.dispatchEvent((0,i.b)("atomic/scrollToTop",t.detail))}get interface(){const t=document.querySelector(this.selector);if(!t)throw new Error(`Cannot find interface element with selector "${this.selector}"`);return t}}}}]);
+
+//# sourceMappingURL=4589.bundle.js.map
