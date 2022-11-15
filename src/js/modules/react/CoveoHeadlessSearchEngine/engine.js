@@ -4,7 +4,11 @@ import {
 } from '@coveo/headless';
 
 const headlessEngine = buildSearchEngine({
-  configuration: getSampleSearchEngineConfiguration(),
+  // configuration: getSampleSearchEngineConfiguration(),
+  configuration: {
+    accessToken: 'xx919f5690-8261-41ae-83b9-951877187f3d',
+    organizationId: 'TestOrganization',
+  },
   loggerOptions: { level: 'info' }
 });
 

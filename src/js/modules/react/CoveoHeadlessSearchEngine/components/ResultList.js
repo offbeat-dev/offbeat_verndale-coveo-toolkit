@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
 import { loadSearchActions } from '@coveo/headless';
+import ResultLink from './ResultLink';
 
 const ResultList = ({ controller, engine }) => {
   const [state, setState] = useState(controller.state);
@@ -17,7 +17,7 @@ const ResultList = ({ controller, engine }) => {
         ) : (
           state.results?.map((result, i) => (
             <li key={i} className="coveo-headless-search__result">
-              <a href={result.clickUri}>{result.title}</a>
+              <ResultLink engine={engine} result={result} />
               <p>{result.excerpt}</p>
             </li>
           ))
